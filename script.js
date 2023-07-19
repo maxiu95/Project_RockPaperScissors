@@ -3,20 +3,20 @@ const getComputerChoice = () => {
 
     switch (ranNum) {
         case 0:
-            return "ROCK";
+            return "rock";
             break;
         case 1:
-            return "SCISSORS";
+            return "scissors";
             break;
         case 2:
-            return "PAPER";
+            return "paper";
             break;
     }
 }
 
 const getPlayerChoice = () => {
     while (true) {
-        const playerChoice = prompt("Rock/Paper/Scissors?: ").toUpperCase();
+        const playerChoice = prompt("Rock/Paper/Scissors?: ").toLowerCase();
         if ((playerChoice != "ROCK") && (playerChoice != "SCISSORS") && (playerChoice != "PAPER")) {
             console.log("Invalid input. Please choose: rock, paper or scissors.");
         } else {
@@ -28,9 +28,9 @@ const getPlayerChoice = () => {
 const roundOfGame = (computer, player) => {
     if (player === computer) {
         return "Draw!";
-    } else if ((computer === "ROCK" && player === "SCISSORS") || 
-        (computer === "SCISSORS" && player === "PAPER") || 
-        (computer === "PAPER" && player === "ROCK")) {
+    } else if ((computer === "rock" && player === "scissors") || 
+        (computer === "scissors" && player === "paper") || 
+        (computer === "paper" && player === "rock")) {
         return "Lose!";
     } else {
         return "Win!";
